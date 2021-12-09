@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {}
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj",
+        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj",
         "projectName": "NovaErp.Common",
-        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj",
+        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj",
         "packagesPath": "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\obj\\",
+        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj": {
-                "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj"
+              "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj": {
+                "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj": {
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj",
         "projectName": "NovaErp.Core",
-        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj",
+        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\NovaErp.Core.csproj",
         "packagesPath": "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Core\\obj\\",
+        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1240,11 +1240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Repository\\NovaErp.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Repository\\NovaErp.Repository.csproj",
       "projectName": "NovaErp.Repository",
-      "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Repository\\NovaErp.Repository.csproj",
+      "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Repository\\NovaErp.Repository.csproj",
       "packagesPath": "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Repository\\obj\\",
+      "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1265,11 +1265,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {
-              "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj"
+            "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj": {
+              "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Common\\NovaErp.Common.csproj"
             },
-            "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {
-              "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj"
+            "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {
+              "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj"
             }
           }
         }

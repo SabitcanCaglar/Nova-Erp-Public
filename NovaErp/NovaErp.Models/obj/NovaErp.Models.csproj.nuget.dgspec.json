@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {}
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj",
+        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj",
         "projectName": "NovaErp.Models",
-        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj",
+        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\NovaErp.Models.csproj",
         "packagesPath": "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Models\\obj\\",
+        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

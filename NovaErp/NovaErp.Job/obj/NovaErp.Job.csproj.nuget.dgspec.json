@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj": {}
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj": {
+    "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj",
+        "projectUniqueName": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj",
         "projectName": "NovaErp.Job",
-        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj",
+        "projectPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Job\\NovaErp.Job.csproj",
         "packagesPath": "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Job\\obj\\",
+        "outputPath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Job\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

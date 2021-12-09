@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ONUfgVdRrz4tZOvAHgYd+Qc+jwvyjrWj8jeZlfJT5z7ZClEBSxXUVtpA/8wWiqa4RZ12MsqNSAOkCbb+qUVtg==",
+  "dgSpecHash": "x00NP4Xgg4mrosra9i28QETQIOdElNIJwyU6jfXtEb5trTb9WPQs1js+MOirnWTy+1QdMRA43y1INQ/Ula9VyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.UI\\NovaErp.UI.csproj",
+  "projectFilePath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.UI\\NovaErp.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

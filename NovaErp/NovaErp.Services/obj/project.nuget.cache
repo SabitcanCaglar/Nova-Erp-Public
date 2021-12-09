@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QN61DuatpVMuclOX5vF65os4J5ibWTOvVo7xIeACcA1mHzTrxVVi54EAXRp0y6jsVp0yeks+roaQabrndr+zgA==",
+  "dgSpecHash": "lHpd4Og9kFOY65FlXmanVJC5wADcf0Km0Wq7pvFjqJ9bYh03i6ehQoXY8xAKyKBerRM6wzVJ1H4fox4ywoBoYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova\\NovaErp\\NovaErp.Services\\NovaErp.Services.csproj",
+  "projectFilePath": "C:\\Users\\CAN FAMİLY\\Documents\\GitHub\\Nova-Erp-Public\\NovaErp\\NovaErp.Services\\NovaErp.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\CAN FAMİLY\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

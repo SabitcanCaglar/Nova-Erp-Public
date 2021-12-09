@@ -1,0 +1,12 @@
+﻿@using NovaErp.UI
+@using NovaErp.UI.Models
+@using NovaErp.Models
+@using NovaErp.Models.SiparisModels
+@using Microsoft.AspNetCore.Http
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ int? kullanıcıId = Context.Session.GetInt32("Id");};
+@{ string kullanıcıadsoyad = Context.Session.GetString("AdSoyad");};
+@using FormHelper
+@using FluentValidation.AspNetCore;
+
+@addTagHelper *, FormHelper

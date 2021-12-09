@@ -1,0 +1,328 @@
+﻿@{ Layout = null; }
+@model Kullanici
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NOVA ERP | Demo V1.09.2021</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/novaerp.ico">
+    <link rel="icon" href="~/novaerp.ico" type="image/x-icon">
+
+    <!-- vector map CSS -->
+    <link href="~/NovaErpSources/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+
+    <!-- Custom CSS -->
+    <link href="~/NovaErpSources/dist/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/limonte-sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <style>
+
+        .colored-toast.swal2-icon-success {
+            background-color: #3cb878 !important;
+        }
+
+        .colored-toast.swal2-icon-error {
+            background-color: #f15b26 !important;
+        }
+
+        .colored-toast .swal2-title {
+            color: white;
+        }
+
+        .colored-toast .swal2-close {
+            color: white;
+        }
+
+        .colored-toast .swal2-html-container {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <!--Preloader-->
+    <div class="preloader-it">
+        <div class="la-anim-1"></div>
+    </div>
+    <!--/Preloader-->
+
+
+
+    <div class="wrapper pa-0">
+
+
+        <!-- Main Content -->
+        <div class="page-wrapper pa-0 ma-0">
+            <img style="position:absolute;width:100%;height:100%;margin-left:0px" src="~/img/LoginBackground.png" />
+            <div class="container-fluid">
+                <!-- Row -->
+
+
+                <div class="table-struct full-width full-height">
+                    <div class="table-cell vertical-align-middle">
+                        <div class="auth-form  ml-auto mr-auto no-float">
+                            <div style="text-align:center" class="panel panel-default card-view mb-0">
+                                <h1 style="position:absolute;margin-left:60px">NOVA ERP</h1><br /><br />
+                                <div class="panel-heading">
+
+                                    <div class="pull-center">
+
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+
+                                        <div class="row">
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="form-wrap">
+                                                    <form data-toggle="validator" role="form" id="kullanicikontrol">
+                                                        <div class="form-group">
+
+                                                            <div class="form-group has-feedback">
+                                                                <div class="input-group">
+
+                                                                    <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                                                    <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="KullaniciAdi" value="" name="KullaniciAdi" placeholder="Kullanıcı Adı" required="">
+                                                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+                                                                </div>
+                                                                <div  class="help-block with-errors"></div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="form-group has-feedback">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-addon"><i class="icon-lock"></i></div>
+                                                                    <input type="password" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="Sifre" value="" name="Sifre" placeholder="Şifre" required="">
+                                                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+                                                                </div>
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="checkbox checkbox-success pr-10 pull-left">
+                                                                <input id="checkbox_2" type="checkbox">
+                                                                <label for="checkbox_2"> Beni Hatırla </label>
+                                                            </div>
+                                                            <a class="capitalize-font txt-danger block pt-5 pull-right" href="#">Şifremi Unuttum</a>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button id="girisyap" type="submit" class="btn btn-success btn-block">GİRİŞ</button>
+                                                        </div>
+
+                                                    </form>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/NovaErpSources/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/NovaErpSources/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/NovaErpSources/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+    <script src="~/NovaErpSources/vendors/bower_components/bootstrap-validator/dist/validator.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="~/NovaErpSources/dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="~/NovaErpSources/dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="~/NovaErpSources/dist/js/init.js"></script>
+    <script src="~/limonte-sweetalert2/sweetalert2.js"></script>
+
+    <script>
+
+        //$("#girisyap").click(function () {
+
+        //    //var kullanici = {
+        //    //    KullaniciAdi: $("#kullaniciadi").val(),
+        //    //    Sifre: $("#sifre").val()
+        //    //};
+
+        //    //$.ajax({
+        //    //    type: "POST",
+        //    //    url: "/Login/GirisYap",
+        //    //    data: kullanici,
+        //    //    dataType: 'json',
+        //    //    success: function (durum) {
+
+        //    //        if (durum == "basarili") {
+
+        //    //            Swal.fire({
+        //    //                icon: 'success',
+        //    //                title: 'Giriş Başarılı',
+        //    //                confirmButtonColor: '#2c466b',
+
+        //    //            });
+
+        //    //            setTimeout(function () {
+        //    //                window.location = "/Anasayfa";
+
+        //    //            }, 2000);
+
+        //    //        }
+        //    //        else {
+
+        //    //            Swal.fire({
+        //    //                icon: 'error',
+        //    //                title: 'Oops...',
+        //    //                text: durum,
+        //    //                confirmButtonColor: '#2c466b',
+        //    //                footer: '<a href="">Why do I have this issue?</a>'
+        //    //            })
+        //    //        }
+
+        //    //    }
+
+
+
+
+
+
+        //    //});
+
+
+
+
+        //})
+        $('#kullanicikontrol').submit(function (e) {
+           
+            var form = $(this);
+            var kullaniciadi = $("#KullaniciAdi").val();
+            var sifre = $("#Sifre").val();
+            if (kullaniciadi == "" || sifre == "")
+            {
+                Swal.mixin({
+                    toast: true,
+                    position: 'top',
+                    iconColor: 'white',
+                    customClass: {
+                        popup: 'colored-toast'
+                    },
+                    showConfirmButton: false,
+                    timer: 4000,
+                    timerProgressBar: true,
+
+                }).fire({
+                    icon: 'error',
+                    title: 'Kullanıcı adı veya şifre boş olamaz',
+                    width: '500px'
+
+                })
+                return false;
+               
+            }
+            
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "Login/KullaniciKontrol",
+                data: form.serialize(), // serializes the form's elements.
+                success: function (data) {
+                    if (data.success) {
+                        console.log(data.message);
+                        console.log(data.object);
+                        ToastSuccess(data.message);
+                        setTimeout(function () {
+                            window.location = "/Anasayfa";
+
+                        }, 3500);
+                    }
+                    else {
+
+                        ToastError(data.message);
+                    }
+
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+
+           function ToastSuccess(message) {
+               Swal.mixin({
+                   toast: true,
+                   position: 'top',
+                   iconColor: 'white',
+                   customClass: {
+                       popup: 'colored-toast'
+                   },
+                   showConfirmButton: false,
+                   timer: 3500,
+                   timerProgressBar: true,
+
+               }).fire({
+                   icon: 'success',
+                   title:message,
+                   width: '500px'
+
+               })
+
+           }
+
+           function ToastError(message) {
+               Swal.mixin({
+                   toast: true,
+                   position: 'top',
+                   iconColor: 'white',
+                   customClass: {
+                       popup: 'colored-toast'
+                   },
+                   showConfirmButton: false,
+                   timer: 4000,
+                   timerProgressBar: true,
+
+               }).fire({
+                   icon: 'error',
+                   title: message,
+                   width: '500px'
+
+               })
+           }
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

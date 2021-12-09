@@ -1,0 +1,119 @@
+﻿@{ int? kullanıcıId = Context.Session.GetInt32("Id");}
+@{ string kullanıcıadsoyad = Context.Session.GetString("AdSoyad");}
+
+@model Musteri
+@{
+    Layout = null;
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading" >
+                <div class="pull-center" >
+                    <h2 style="text-align: center; font-size: 25px; color: #2c466b" class="panel-title txt-dark">Organizasyonunuz İçin Yeni Bir Müşteri Ekleyin..</h2>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-7">
+
+
+
+                            <div align="center"><img style="width:75%;height:70%" src="~/img/YENİSİPARİŞ/aaaaa.png" /></div>
+                            
+
+
+
+
+
+
+
+                        </div>
+                        <div class="col-sm-5">
+
+                            <form asp-formhelper="true" asp-enableButtonAfterSuccess="true" id="müsteriekle" asp-controller="YeniSiparis" asp-action="MusteriEkle">
+
+
+                                <div class="input-group row g-3  col-sm-12">
+
+
+                                    <label asp-for="Adi" style="font-size: 15px" class=" col-sm-12 align-items-center col-form-label">Müşteri Adı</label>
+                                    <input type="text" id="müsteriadi" class="  col-sm-12 align-items-center form-control" asp-for="Adi">
+                                    <span class=" text-danger align-items-center col-sm-12 " asp-validation-for="Adi"></span>
+
+
+                                    <label asp-for="Soyadi" style="font-size: 15px" class=" col-sm-12 col-form-label">Müşteri Soyadı</label>
+                                    <input type="text" id="müsterisoyadi" class=" col-sm-12 form-control" asp-for="Soyadi">
+                                    <span class=" text-danger align-items-center col-sm-12" asp-validation-for="Soyadi"></span>
+
+                                    <label asp-for="Email" style="font-size: 15px" class=" col-sm-12 col-form-label">E-Mail</label>
+                                    <input type="text" id="müsteriemail" class=" col-sm-12 form-control" asp-for="Email">
+                                    <span class=" text-danger align-items-center col-sm-12" asp-validation-for="Email"></span>
+
+                                    <label asp-for="Ulke" style="font-size: 15px" class=" col-sm-12 col-form-label">Ülke</label>
+                                    <input type="text" id="ülke" class=" col-sm-12 form-control" asp-for="Ulke">
+                                    <span class="text-danger align-items-center col-sm-12" asp-validation-for="Ulke"></span>
+
+
+                                    <label asp-for="TelefonNo" style="font-size: 15px" class=" col-sm-12 col-form-label">Telefon Numarası</label>
+                                    <input type="text" id="müsteriTelNo" class=" col-sm-12 form-control" asp-for="TelefonNo">
+                                    <span class="text-danger align-items-center col-sm-12" asp-validation-for="TelefonNo"></span>
+
+
+                                    <label asp-for="Firma" style="font-size: 15px" class=" col-sm-12 col-form-label">Firma</label>
+                                    <input type="text" id="müsteriFirmaBilgi" class=" col-sm-12 form-control" asp-for="Firma">
+                                    <span class="text-danger align-items-center col-sm-12" asp-validation-for="Firma"></span>
+
+
+                                    <label style="font-size: 15px" asp-for="Adres" class=" col-sm-12 col-form-label">Adres</label>
+                                    <textarea rows="5" cols="5" class="col-sm-12 form-control" id="müsteriAdres" asp-for="Adres"></textarea>
+                                    <span class=" text-danger align-items-center col-sm-12" asp-validation-for="Adres"></span>
+                                </div><br />
+
+
+
+
+                                <div class="input-group row g-3  col-sm-12">
+                                    <div class="col-sm-2">
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                       
+                                        <button type="reset" style="background: #c9222a; border-color: #c9222a; font-size: 20px " class="btn btn-primary btn-anim"><i class="fa fa-retweet fa-3x"></i><span class="btn-text">Temizle</span></button>
+                                    </div>
+                                    <input type="hidden" value="  @kullanıcıId  " name="GüncelleyenPersonelId">
+                                    <input type="hidden" value="  @kullanıcıId  " name="EkleyenPersonelId">
+                                    <div class="col-sm-5">
+
+                                       
+                                        <button type="submit" style=" font-size: 20px " class="btn btn-primary btn-anim"><i class="fa fa-user-plus fa-3x"></i><span class="btn-text">Yeni Müşteri Ekle</span></button>
+
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btnmüsteriekle").click(function () {
+        var test = "Müşteri eklendi.";
+        $("#MusteriHubbtn").trigger('musterieklesilgüncelle', [test]);
+    })
+    
+
+</script>

@@ -1,0 +1,54 @@
+﻿@{ int? kullanıcıId = Context.Session.GetInt32("Id");}
+@{ string kullanıcıadsoyad = Context.Session.GetString("AdSoyad");}
+
+@model Musteri
+@{
+    Layout = null;
+}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-center">
+                    <h2 style="text-align: center; font-size: 25px" class="panel-title txt-dark">Müşterileriniz İçin Yeni Bir Sipariş Ekleyin..</h2>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="table-wrap">
+                        <div class="table-responsive">
+                            <table id="musteriliste" class="table table-border-style wrap pb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>GüncelleyenpersonelId</th>
+                                        <th style="text-align:center">Müşteri Adı</th>
+                                        <th style="text-align:center">Müşteri Soyadı</th>
+                                        <th style="text-align:center">E-Mail</th>
+                                        <th style="text-align:center">Adres</th>
+                                        <th style="text-align:center">Ülke</th>
+                                        <th style="text-align:center">Telefon Numarası</th>
+                                        <th style="text-align:center">Firma</th>
+                                        <th style="text-align:center">Sipariş</th>
+                                        <th style="text-align:center">Düzenle</th>
+                                        <th style="text-align:center">Sil</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

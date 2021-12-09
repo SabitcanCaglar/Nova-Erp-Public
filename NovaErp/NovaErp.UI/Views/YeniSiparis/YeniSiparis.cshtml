@@ -1,0 +1,565 @@
+﻿@{
+    Layout =null;
+}
+
+@{ int? kullanıcıId = Context.Session.GetInt32("Id");}
+@{ string kullanıcıadsoyad = Context.Session.GetString("AdSoyad");}
+@model Musteri
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>
+        YENİ SİPARİŞ
+    </title>
+</head>
+<body>
+    
+
+    <div class="row heading-bg" style="background-color: #c9222a;text-align:center">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h2 class="txt-light"> <i class="fa fa-shopping-basket "></i> Yeni Sipariş</h2>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /Breadcrumb -->
+    </div>
+
+    <button class="btn btn-danger" id="musterihubbtn" style="visibility: hidden">MÜSTERİ HUB</button>
+    <button class="btn btn-danger" id="test" onclick="test()" style="visibility:hidden">MÜSTERİ HUB</button>
+
+
+    <!-- #region Müsteri EKLE -->
+    <partial name="~/Views/YeniSiparis/Partials/MüsteriPartials/_MüsteriEklePartial.cshtml" model="@Model" />
+
+
+    <!-- #endregion -->
+    <!-- #region Müsteri TABLO -->
+    <partial name="~/Views/YeniSiparis/Partials/MüsteriPartials/_MüsteriTabloPartial.cshtml" model="@Model" />
+
+
+
+
+
+
+
+    <!-- #endregion -->
+    @*@section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }*@
+
+
+    <script language="javascript">
+
+
+
+
+
+
+            var musteritablo;
+            $(document).ready(function () {
+                musteritablo = $('#musteriliste').DataTable({
+
+                    "dom": 'Blfrtip',
+
+                    "responsive": true, "lengthChange": false,
+                    "autoWidth": false, "processing": true,
+                    "serverSide": false, "select": false,
+                    "destroy": true,
+                    "lengthMenu": [[5, 10, 30, -1], [5, 10, 30, "All"]],
+                    "fixedHeader": true,
+                    "scrollX": true,
+                    "scrollY": true,
+
+
+
+                    "initComplete": function () {
+                        musteritablo.buttons().container().appendTo('#musteriliste_wrapper .col-md-6:eq(0)');
+                        $("#musteriliste").show();
+                    },
+
+
+                    "buttons": [
+                        {
+                            extend: 'copyHtml5',
+                            exportOptions: {
+                                columns: [2, 3, 4, 5, 6, 7]
+                            }
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            exportOptions: {
+                                columns: [2, 3, 4, 5, 6, 7]
+                            }
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            exportOptions: {
+                                columns: [2, 3, 4, 5, 6, 7]
+                            }
+                        },
+                        /*'colvis'*/
+                    ],
+
+
+
+
+                    "ajax": {
+                        "url": "/YeniSiparis/MusteriListeGetir",
+                        "type": "GET",
+
+                    },
+                    "columnDefs":
+                        [
+                            {
+                                "targets": [0, 1],
+                                "visible": false,
+                                "searchable": false,
+                            },
+
+
+
+                        ],
+
+
+
+
+
+
+
+                    "columns": [
+                        { "data": "id" },
+                        { "data": "guncelleyenPersonelId" },
+                        { "data": "adi" },
+                        { "data": "soyadi" },
+                        { "data": "email" },
+                        { "data": "adres" },
+                        { "data": "ulke" },
+                        { "data": "telefonNo" },
+                        { "data": "firma" },
+
+
+                        {
+                            "data": null,
+                            "className": "taslaksiparis",
+                            "render": function (data, type, row) {
+
+                                return '<button class="btn btn-success btn-icon-anim btn-circle"><i class="fa fa-cart-plus "></i></button>';
+                            },
+                            "targets": -1
+                        },
+                        {
+                            "data": null,
+
+                            "className": "düzenle",
+                            "render": function (data, type, row) {
+
+                                return '<button class="btn btn-primary btn-icon-anim btn-circle"><i class="fa fa-edit "></i></button>';
+                            },
+                            "targets": -1
+                        },
+                        {
+                            "data": null,
+                            "className": "sil",
+                            "render": function (data, type, row) {
+
+                                return '<button class="btn btn-danger btn-icon-anim btn-circle"><i class="fa fa-trash "></i></button> ';
+                            },
+                            "targets": -1
+                        }
+                    ]
+
+
+                });
+
+                $('#musteriliste tbody').on('click', '.sil', function () {
+                    var data = musteritablo.row(this).data();
+                    musterisilmodal(data);
+
+                });
+
+                $('#musteriliste tbody').on('click', '.düzenle', function () {
+                    var data = musteritablo.row(this).data();
+                    musteridüzenlemodal(data);
+
+                });
+                $('#musteriliste tbody').on('click', '.taslaksiparis', function () {
+                    var data = musteritablo.row(this).data();
+                    taslaksiparis(data);
+
+                });
+
+
+
+            });
+
+
+
+
+                function musteridüzenlemodal(data) {
+
+
+
+                    Swal.fire({
+                        title: '<h2 style="color:#c9222a"><i class="icon- user mr - 10"></i>Müşteri Bilgilerini Güncelle</h2>' +
+                            '<hr>',
+                        html: true,
+
+                        cancelButtonColor: '#c9222a',
+                        cancelButtonText: 'Vazgeç',
+                        showCancelButton: true,
+                        confirmButtonText: 'Onayla',
+                        confirmButtonColor: '#2c466b',
+                        showLoaderOnConfirm: true,
+                        allowOutsideClick: false,
+                        width: '550px',
+                        html:
+
+                            '<table id="musterigüncelle" style="clear: both" class="table">' +
+                            '<tbody>' +
+                            '<tr>' +
+                            '<td style="width:45%">Müşteri Adı</td>' +
+                            '<td style="width:55%"><input type="text" value="' + data.adi + '" id="adi" class="form-control" name="adi" ></td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td style="width:45%">Müşteri Soyadı</td>' +
+                            '<td style="width:55%"><input type="text" value="' + data.soyadi + '" id="soyadi" class="form-control" name="soyadi" ></td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td style="width:45%">ulke</td>' +
+                            '<td style="width:55%"><input type="text" value="' + data.ulke + '" id="ulke" class=" col-sm-3 form-control" name="ulke"></td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td style="width:45%">Telefon Numarası</td>' +
+                            '<td style="width:55%"><input type="text" data-mask="(999) 999-9999" value="' + data.telefonNo + '" id="telefonNo" class=" col-sm-3 form-control" name="telefonNo">' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td style="width:45%">Firma Bilgisi</td>' +
+                            '<td style="width:55%"><input type="text" value="' + data.firma + '" id="firma" class=" col-sm-3 form-control" name="firma">' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td style="width:45%">Adres</td>' +
+                            '<td style="width:55%"><textarea  rows="5" cols="5" class="col-sm-9 form-control" id="adres" name="adres"  >' + data.adres + '</textarea>' +
+                            '</tr>' +
+
+                            '</tbody>' +
+                            '</table>' +
+
+                        '',
+
+                        preConfirm: () => {
+                            var müsteri = {
+                                Id:data.id,
+                                Adi: $("#musterigüncelle #adi").val(),
+                                Soyadi: $("#musterigüncelle #soyadi").val(),
+                                Ulke: $("#musterigüncelle #ulke").val(),
+                                TelefonNo: $("#musterigüncelle #telefonNo").val(),
+                                Firma: $("#musterigüncelle #firma").val(),
+                                Adres: $("#musterigüncelle #adres").val(),
+
+                            };
+                            if (formvalid() == false) {
+                                return false
+                            }
+                            else {
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/YeniSiparis/MusteriGüncelle",
+                                    data: müsteri,
+                                    dataType: 'json',
+                                    success: function (durum) {
+
+                                        if (durum == "basarili") {
+
+                                            Swal.fire({
+                                                html: '@kullanıcıadsoyad' + 'Tarafından Müşteri Güncelleme İşlemi Gerçekleştirildi.',
+                                                icon: 'success',
+                                                title: 'Başarılı..',
+
+                                                confirmButtonColor: '#2c466b'
+
+                                                /*footer: '<a href="">Why do I have this issue?</a>'*/
+                                            })
+
+                                            var test = "Müşteri güncellendi.";
+                                            $("#musterihubbtn").trigger('musterieklesilgüncelle', [test]);
+
+
+                                        }
+                                        else {
+
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Oops...',
+                                                text: durum,
+                                                confirmButtonColor: '#2c466b',
+                                                /*footer: '<a href="">Why do I have this issue?</a>'*/
+                                            })
+                                        }
+
+                                    }
+
+
+                                })
+                            }
+
+
+
+
+
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    })
+                }
+
+
+
+                function formvalid() {
+
+
+                    var adı = $("#musterigüncelle #adi").val();
+
+
+                    var soyadı = $("#musterigüncelle #soyadi").val();
+                    var ulke = $("#musterigüncelle #ulke").val();
+                    var telefon = $("#musterigüncelle #telefonNo").val();
+                    var firma = $("#musterigüncelle #firma").val();
+                    var adres = $("#musterigüncelle #adres").val();
+
+                    if (adı == "" || adı == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> Müşteri Adı Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    if (soyadı == "" || soyadı == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> Müşteri Soyadı Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    if (ulke == "" || ulke == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> ulke Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    if (telefon == "" || telefon == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> Telefon Numarası Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    if (firma == "" || firma == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> Firma Bilgisi Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    if (adres == "" || adres == undefined) {
+                        Swal.showValidationMessage(
+                            '<i class="fa fa-info-circle"></i> Adres Bilgisi Boş Olamaz'
+                        )
+                        return false;
+
+                    }
+                    return true;
+
+                }
+
+
+
+
+
+                function musterisilmodal(data) {
+
+                    Swal.fire({
+                        title: 'Emin Misiniz ?',
+                        text: 'Seçtiğiniz' + ' ' + data.adi + ' ' + data.soyadi + ' ' + 'Müşterisi  Silinmek Üzere..',
+                        icon: 'warning',
+
+
+                        cancelButtonColor: '#c9222a',
+                        cancelButtonText: 'Vazgeç',
+                        showCancelButton: true,
+                        confirmButtonText: 'Onayla',
+                        confirmButtonColor: '#2c466b',
+                        showLoaderOnConfirm: true,
+                        allowOutsideClick: false,
+
+
+
+                        preConfirm: () => {
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/YeniSiparis/MüsteriSil",
+                                data: data,
+                                dataType: 'json',
+                                success: function (durum) {
+
+                                    if (durum == "basarili") {
+
+
+                                        Swal.fire({
+                                            html: '@kullanıcıadsoyad' + 'Tarafından Müşteri Silme İşlemi Gerçekleştirildi.',
+                                            icon: 'success',
+                                            title: 'Başarılı..',
+
+                                            confirmButtonColor: '#2c466b'
+
+                                            /*footer: '<a href="">Why do I have this issue?</a>'*/
+                                        })
+                                        var test = "Müşteri silindi.";
+                                        $("#musterihubbtn").trigger('musterieklesilgüncelle', [test]);
+
+
+                                    }
+                                    else {
+
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Oops...',
+                                            text: durum,
+                                            confirmButtonColor: '#2c466b',
+                                            /*footer: '<a href="">Why do I have this issue?</a>'*/
+                                        })
+                                    }
+
+                                }
+
+
+                            })
+
+
+
+
+
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    })
+
+
+
+
+                }
+
+
+
+                function taslaksiparis(data) {
+
+                    Swal.fire({
+                        title: '' + data.adi + ' ' + data.soyadi + ' ' + 'için..',
+                        text: 'Sipariş Oluşturulsun mu?',
+                        icon: 'question',
+
+
+                        cancelButtonColor: '#c9222a',
+                        cancelButtonText: 'Vazgeç',
+                        showCancelButton: true,
+                        confirmButtonText: 'Onayla',
+                        confirmButtonColor: '#2c466b',
+                        showLoaderOnConfirm: true,
+                        allowOutsideClick: false,
+
+
+
+                        preConfirm: () => {
+
+
+
+                            $("#renderpage").load("/YeniSiparis/TaslakSiparisOlustur", data);
+
+
+
+
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    })
+
+
+
+
+
+                }
+
+
+
+    </script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            const conn = new signalR.HubConnectionBuilder().withUrl("/MusteriHub").build();
+            conn.start();
+
+            $("#musterihubbtn").on('musterieklesilgüncelle', function (event, test) {
+
+
+
+                conn.invoke("musteritabloReload", test);
+
+
+
+            });
+            conn.on("musterieklesilgüncelle", message => {
+                musteritablo.ajax.reload();
+
+            })
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
